@@ -1028,8 +1028,7 @@ sub execute
     }
 
     # Execute gnuplot
-    my $cmd = qq("$gnuplot" "$self->{_script}");
-    $cmd .= " -" if ($self->{terminal} =~ /^(ggi|pm|windows|wxt|x11)(\s|$)/);
+    my $cmd = qq("$gnuplot" "-p" "$self->{_script}");
     my $err = `$cmd 2>&1`;
 #    my $err;
 #    system("$cmd");
